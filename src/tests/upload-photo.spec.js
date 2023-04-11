@@ -1,5 +1,9 @@
-import { expect } from '@playwright/test';
+import path from 'path';
+import data from '../../resources/test-data.json';
+import { my_account_url_path, notifications_my_account_update_text_fr } from '../../resources/constants';
+import { resources } from '../../resources/resources-paths';
 
+import { expect } from '@playwright/test';
 import BasePage from '../pages/base.page';
 import LoginPage from '../pages/login.page';
 import UserMenuPage from '../pages/user-menu.page';
@@ -20,20 +24,21 @@ describe('Photo upload tests', () => {
     });
 
     afterEach(async () => {
-        //await context.close();
+        await context.close();
     });
 
-    it('Should upload a profile photo after signing-in with correct credentials', async () => {
-        // Sign in with valid credentials
-        await basePage.navigate('https://www.welcometothejungle.com/fr/me/settings/account');
-        await loginPage.enterEmail('inqom.qaautomationapplicant@gmail.com');
-        await loginPage.enterPassword('o5N,d5ZR@R7^');
+    it('Should submit the upload of a profile photo', async () => {
+        // Sign in to my account page with valid credentials
+        await basePage.navigate(data.baseUrl + my_account_url_path);
+        await loginPage.enterEmail(data.validCredentials.email);
+        await loginPage.enterPassword(data.validCredentials.password);
         await loginPage.clickSubmitButton();
         await expect(page.locator(userMenuPage.userMenuLinks)).toBeVisible();
         await expect(page.locator(userMenuPage.userMenuLinkSettings)).toHaveAttribute('aria-selected', 'true');
 
         // Upload a photo
-        await basePage.uploadFile(myAccountPage.avatarInputFile, 'profile-photo.png');
+        const filePath = path.join(resources, 'profile-photo.png');
+        await basePage.uploadFile(myAccountPage.avatarInputFile, filePath);
         // Wait for the uploaded image to be displayed on the page
         await page.waitForSelector('img[src^="blob:"]');
 
@@ -41,7 +46,7 @@ describe('Photo upload tests', () => {
         await myAccountPage.clickEditAccountSubmitBtn();
         await expect(page.locator(notificationsPage.statusNotification)).toBeVisible();
         await expect(page.locator(notificationsPage.statusNotification)).toHaveText(
-            'Mise à jour réussie !Vos informations personnelles ont bien été mises à jour.'
+            notifications_my_account_update_text_fr
         );
     });
 });
