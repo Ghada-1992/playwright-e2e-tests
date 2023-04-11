@@ -1,19 +1,18 @@
 {
-    "name": "iobeya-e2e-tests",
+    "name": "playwright-e2e-tests",
     "version": "1.0.0",
-    "description": "iObeya e2e test framework",
+    "description": "Playwright e2e test framework",
     "main": "index.js",
     "scripts": {
-        "test": "jest --runInBand",
-        "test.watch": "jest --watchAll"
+        "test": "jest --runInBand"
     },
     "validate-branch-name": {
         "pattern": "/^(automate|review)\\-([\\w-]+?)(\\d+)?$",
         "errorMsg": "Branch name format : <type>-<name>-<issue_ID>"
     },
     "repository": {
-        "type": "git",
-        "url": "git@gitlab.iobeya.io:gayari/iobeya-e2e-tests.git"
+        "type": "https",
+        "url": "https://github.com/Ghada-1992/playwright-e2e-tests.git"
     },
     "keywords": [
         "jest",
@@ -36,10 +35,12 @@
         "eslint-plugin-playwright": "^0.8.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-promise": "^6.1.1",
+        "husky": "^8.0.3",
         "jest": "^27.3.1",
         "jest-html-reporters": "^3.1.4",
         "jest-junit": "^15.0.0",
         "jest-playwright-preset": "^1.7.0",
+        "lint-staged": "^13.2.0",
         "playwright": "^1.31.2",
         "prettier": "^2.8.5"
     }
