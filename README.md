@@ -12,7 +12,7 @@ v14.1.0
 
 $ npm -v
 6.14.4
-``` 
+```
 
 ### Run application
 
@@ -20,7 +20,7 @@ Clone the repository
 
 ```bash
 git clone https://github.com/Ghada-1992/playwright-e2e-tests.git
-``` 
+```
 
 Install exact dependencies/devDependencies from package-lock.json file
 
@@ -49,26 +49,25 @@ npm test
         │   ├── ...
         │
         ├── specs                              # Test suite
-        │   ├── login.spec.js                  # Automated Test Script     
-        │   ├── ....           
-        │   ├── ....    
+        │   ├── login.spec.js                  # Automated Test Script
+        │   ├── ....
+        │   ├── ....
         │
         │
         │── jest.config.js                     # Jest confiuguration file
         │
         │
-        ├── jest-playwright.config.js          # Jest-Playwright configuration file            
-        │   
-        │               
+        ├── jest-playwright.config.js          # Jest-Playwright configuration file
         │
-        └─── reports   
+        │
+        │
+        └─── reports
               ├──report.html                   #  Test report of for the tests executed
-
 
 To View HTML Report
 
 ```bash
 reports :
   |
-  ├── report.html - Right Click and Reveal in File Explorer (OR) Finder     
+  ├── report.html - Right Click and Reveal in File Explorer (OR) Finder
 ```

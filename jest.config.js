@@ -2,7 +2,7 @@ module.exports = {
     verbose: true,
     preset: 'jest-playwright-preset',
     transform: {
-        '^.+\\.[t|j]sx?$': 'babel-jest',
+        '^.+\\.[t|j]sx?$': 'babel-jest'
     },
     testPathIgnorePatterns: ['/node_modules/', 'lib'],
     testMatch: ['**/__tests__/**/*.+(ts|js)', '**/?(*.)+(spec|test).+(ts|js)'],
@@ -14,9 +14,9 @@ module.exports = {
             {
                 publicPath: './reports',
                 filename: 'report.html',
-                openReport: false,
-            },
+                openReport: false
+            }
         ],
-        ['jest-junit', {outputDirectory: 'reports', outputName: 'playwright-report.xml'}]
-    ],
+        ['jest-junit', { outputDirectory: 'reports', outputName: 'playwright-report.xml' }]
+    ]
 };

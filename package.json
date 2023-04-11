@@ -6,10 +6,6 @@
     "scripts": {
         "test": "jest --runInBand"
     },
-    "validate-branch-name": {
-        "pattern": "/^(automate|review)\\-([\\w-]+?)(\\d+)?$",
-        "errorMsg": "Branch name format : <type>-<name>-<issue_ID>"
-    },
     "repository": {
         "type": "https",
         "url": "https://github.com/Ghada-1992/playwright-e2e-tests.git"
@@ -23,7 +19,7 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/preset-env": "^7.21.4",
-        "@playwright/test": "^1.31.2",
+        "@playwright/test": "^1.30.0",
         "babel-jest": "^29.5.0",
         "eslint": "^8.37.0",
         "eslint-config-prettier": "^8.8.0",
@@ -41,7 +37,7 @@
         "jest-junit": "^15.0.0",
         "jest-playwright-preset": "^1.7.0",
         "lint-staged": "^13.2.0",
-        "playwright": "^1.31.2",
+        "playwright": "^1.30.0",
         "prettier": "^2.8.5"
     }
 }
