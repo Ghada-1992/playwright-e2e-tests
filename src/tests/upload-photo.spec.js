@@ -10,7 +10,7 @@ import UserMenuPage from '../pages/user-menu.page';
 import MyAccountPage from '../pages/my-account.page';
 import NotificationsPage from '../pages/notifications.page';
 
-describe('Photo upload tests', () => {
+describe('My account information update tests', () => {
     let context, page, basePage, loginPage, userMenuPage, myAccountPage, notificationsPage;
 
     beforeEach(async () => {
@@ -27,7 +27,7 @@ describe('Photo upload tests', () => {
         await context.close();
     });
 
-    it('Should submit the upload of a profile photo', async () => {
+    it('Should update my account information by uploading a profile photo', async () => {
         // Sign in to my account page with valid credentials
         await basePage.navigate(data.baseUrl + my_account_url_path);
         await loginPage.enterEmail(data.validCredentials.email);
